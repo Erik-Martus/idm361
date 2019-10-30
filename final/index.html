@@ -23,11 +23,68 @@
   <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
   <link rel="apple-touch-icon" href="images/icons/icon-57x57.png" sizes="57x57">
 
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
   <title>Bite</title>
 </head>
 
 <body>
-  <h1>Testing</h1>
+  <main>
+      <header>
+        <img class="logo" src="images/bite-logo.png" alt="BITE">
+    </header>
+
+    <section id="like-dislike-section">
+        <img src="images/like-dislike.png" alt="like/like-dislike slider">
+    </section>
+
+    <section id="cuisine-section">
+        <img src="images/american-food.png" alt="american food">
+        <img src="images/chinese-food.png" alt="chinese food">
+        <img src="images/italian-food.png" alt="italian food">
+        <img src="images/indian-food.png" alt="indian food">
+        <img src="images/hispanic-food.png" alt="hispanic food">
+        <img src="images/japanese-food.png" alt="japanese food">
+    </section>
+
+    <div>
+        <img id="pickForMe-btn" src="images/pickForMe-btn.png" alt="Pick For Me">
+    </div>
+
+    <div id="shuffling-animation-div">
+      <div id="shuffling-animation-container">
+      <div class="hand">
+          <div class="card card-1">
+            <span>
+            </span>
+        </div>
+        <div class="card card-2">
+            <span>
+            </span>
+        </div>
+        <div class="card card-3">
+            <span>
+            </span>
+        </div>
+      </div>
+    </div>
+
+    <svg id="picking" xmlns="http://www.w3.org/2000/svg" width="132" height="43" viewBox="0 0 132 43">
+      <text id="picking" transform="translate(0 34)" fill="#fff" font-size="30" font-family="Filicudi-Solid, Filicudi Solid"><tspan x="0" y="0">Picking...</tspan></text>
+    </svg>
+    </div>
+
+    <div id="result-div">
+      <div id="result-container">
+        <div id="big-box-test"></div>
+        <button class="button" id="nearby"></button>
+        <button class="button" id="pick-again"></button>
+      </div>
+    </div>
+    
+    
+  </main>
 </body>
 
 </html>

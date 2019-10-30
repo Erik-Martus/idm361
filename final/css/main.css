@@ -1,0 +1,232 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+  
+}
+
+body {
+    background: rgb(78,230,203);
+    background: linear-gradient(152deg, rgba(78,230,203,1) 0%, rgba(28,180,223,1) 100%);
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin: 1rem auto;
+    position: absolute;
+    left: 5rem;
+    z-index: 50;
+}
+
+header {
+  height: 80px 
+}
+
+#cuisine-section {
+    /* margin: 0 auto; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: .2rem;
+    grid-row-gap: 10px;
+    width: 208px;
+    height: 318px;
+}
+
+#pickForMe-btn {
+    margin-top: 1.5rem;
+}
+
+#shuffling-animation-div {
+  background: rgb(78,230,203);
+  background: linear-gradient(152deg, rgba(78,230,203,1) 0%, rgba(28,180,223,1) 100%);
+    height: 100vh;
+    width: 100vw;
+    z-index: 30;
+    position: absolute;
+    visibility: collapse;
+}
+
+#shuffling-animation-container {
+  margin: auto auto;
+  top: 14rem;
+  position: relative;
+  left: 3.7rem;
+}
+
+.hand {
+    position: relative;
+    height: 100px;
+  }
+  
+  .card {
+    height: 95px;
+    width: 95px;
+    /* border: 3px solid #262722; */
+    border-radius: 1rem;
+    /* background: url(images/box-test.png); */
+    background-color: white;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+    position: absolute;
+    top: 0;
+    transition: transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+   }
+  
+    span {
+      background-color: #8badc8;
+      display: none;
+      margin: 0 auto;
+      width: 88px;
+      height: 88px;
+      border-radius: 25px;
+    }
+  
+    .card-1 {
+      z-index: 3;
+      margin-left: 20px;
+      animation-duration: 6s;
+      animation-name: card-1;
+      animation-iteration-count: infinite;
+    }
+    .card-2 {
+      z-index: 2;
+      margin-left: 10px;
+      animation-duration: 6s;
+      animation-name: card-2;
+      animation-iteration-count: infinite;
+    }
+    .card-3 {
+      z-index: 1;
+      animation-duration: 6s;
+      animation-name: card-3;
+      animation-iteration-count: infinite;
+    }
+
+  
+  @keyframes card-1 {
+    0% {
+    }
+    16.66666% {
+      transform: translateX(95px) rotate(15deg);
+    } 
+    33.33333% {
+      transform: translateX(-20px);
+      z-index: 1;
+    } 
+    49.99999% {
+      transform: translateX(-20px);
+      z-index: 1;
+    }
+    66.66666% {
+      transform: translateX(-10px);
+      z-index: 2;
+    } 
+    83.33333% {
+      transform: translateX(-10px);
+      z-index: 2;
+    }
+  }
+  
+  @keyframes card-2 {
+    0% {
+    }
+    16.66666% {
+      transform: translateX(0);
+    }
+    33.33333% {
+      transform: translateX(10px);
+      z-index: 3;
+    } 
+    49.99999% {
+      transform: translateX(105px) rotate(15deg);
+    } 
+    66.66666% {
+      transform: translateX(-10px);
+      z-index: 1;
+    } 
+    83.33333% {
+      transform: translateX(-10px);
+      z-index: 1;
+    } 
+  }
+  
+  @keyframes card-3 {
+    0% {
+      z-index: 1;
+    } 
+    16.66666% {
+      transform: translateX(0);
+    }
+    33.33333% {
+      transform: translateX(10px);
+      z-index: 2;
+    } 
+    49.99999% {
+      transform: translateX(10px);
+      z-index: 2;
+    } 
+    66.66666% {
+      transform: translateX(20px);
+      z-index: 3;
+    } 
+    83.33333% {
+      transform: translateX(115px) rotate(15deg);
+    } 
+  }
+
+  #picking {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 6.3rem;
+  }
+
+  #result-div {
+    background: rgb(78,230,203);
+    background: linear-gradient(152deg, rgba(78,230,203,1) 0%, rgba(28,180,223,1) 100%);
+      height: 100vh;
+      width: 100vw;
+      z-index: 40;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* visibility: hidden; */
+  }
+
+  #big-box-test {
+    width: 225px;
+    height: 225px;
+    margin: 9rem auto 0;
+    background-color: white;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+    border-radius: 1rem;
+  }
+
+  .button {
+    width: 249px;
+    height: 50px;
+    text-decoration: none;
+    border: none;
+    margin: 1rem auto 0;
+    display: block;
+  }
+
+  #nearby {
+    background: url(../images/findNearby-btn.png);
+  }
+
+  #pick-again {
+    background: url(../images/pickAgain-btn.png);
+  }
