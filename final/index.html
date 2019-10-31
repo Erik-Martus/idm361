@@ -31,49 +31,96 @@
 
 <body>
   <main>
-      <header>
-        <img class="logo" src="images/bite-logo.png" alt="BITE">
+    <header>
+      <img class="logo" src="images/bite-logo.png" alt="BITE">
     </header>
 
     <section id="like-dislike-section">
-        <img src="images/like-dislike.png" alt="like/like-dislike slider">
+      <!-- <img src="images/like-dislike.png" alt="like/like-dislike slider"> -->
+      <span id="slide-bg"></span>
+      <input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
+      <label for="toggle-on" class="btn">Likes</label>
+      <input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio">
+      <label for="toggle-off" class="btn">Dislikes</label>
     </section>
 
     <section id="cuisine-section">
-        <img src="images/american-food.png" alt="american food">
-        <img src="images/chinese-food.png" alt="chinese food">
-        <img src="images/italian-food.png" alt="italian food">
-        <img src="images/indian-food.png" alt="indian food">
-        <img src="images/hispanic-food.png" alt="hispanic food">
-        <img src="images/japanese-food.png" alt="japanese food">
+
+      <form action="" id="cuisine-select">
+        <label>
+          <input type="checkbox" name="cuisine" id="american">
+          <span class="cuisine-icon">
+            <img class="food-img" src="images/cuisine-american.png" alt="american food">
+            <p class="food-label">american</p>
+          </span>
+        </label>
+        <label>
+          <input type="checkbox" name="cuisine" id="chinese">
+          <span class="cuisine-icon">
+            <img class="food-img" src="images/cuisine-chinese.png" alt="chinese food">
+            <p class="food-label">chinese</p>
+          </span>
+        </label>
+        <label>
+          <input type="checkbox" name="cuisine" id="italian">
+          <span class="cuisine-icon">
+            <img class="food-img" src="images/cuisine-italian.png" alt="italian food">
+            <p class="food-label">italian</p>
+          </span>
+        </label>
+        <label>
+          <input type="checkbox" name="cuisine" id="indian">
+          <span class="cuisine-icon">
+            <img class="food-img" src="images/cuisine-indian.png" alt="indian food">
+            <p class="food-label">indian</p>
+          </span>
+        </label>
+        <label>
+          <input type="checkbox" name="cuisine" id="hispanic">
+          <span class="cuisine-icon">
+            <img class="food-img" src="images/cuisine-hispanic.png" alt="hispanic food">
+            <p class="food-label">hispanic</p>
+          </span>
+        </label>
+        <label>
+          <input type="checkbox" name="cuisine" id="japanese">
+          <span class="cuisine-icon">
+            <img class="food-img" src="images/cuisine-japanese.png" alt="japanese food">
+            <p class="food-label">japanese</p>
+          </span>
+        </label>
+      </form>
     </section>
 
     <div>
-        <img id="pickForMe-btn" src="images/pickForMe-btn.png" alt="Pick For Me">
+      <img id="pickForMe-btn" src="images/pickForMe-btn.png" alt="Pick For Me">
     </div>
 
-    <div id="shuffling-animation-div">
+    <!-- <div id="shuffling-animation-div">
       <div id="shuffling-animation-container">
-      <div class="hand">
+        <div class="hand">
           <div class="card card-1">
             <span>
             </span>
-        </div>
-        <div class="card card-2">
+          </div>
+          <div class="card card-2">
             <span>
             </span>
-        </div>
-        <div class="card card-3">
+          </div>
+          <div class="card card-3">
             <span>
             </span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <svg id="picking" xmlns="http://www.w3.org/2000/svg" width="132" height="43" viewBox="0 0 132 43">
-      <text id="picking" transform="translate(0 34)" fill="#fff" font-size="30" font-family="Filicudi-Solid, Filicudi Solid"><tspan x="0" y="0">Picking...</tspan></text>
-    </svg>
-    </div>
+      <svg id="picking" xmlns="http://www.w3.org/2000/svg" width="132" height="43" viewBox="0 0 132 43">
+        <text id="picking" transform="translate(0 34)" fill="#fff" font-size="30"
+          font-family="Filicudi-Solid, Filicudi Solid">
+          <tspan x="0" y="0">Picking...</tspan>
+        </text>
+      </svg>
+    </div> -->
 
     <div id="result-div">
       <div id="result-container">
@@ -82,8 +129,8 @@
         <button class="button" id="pick-again"></button>
       </div>
     </div>
-    
-    
+
+
   </main>
 </body>
 
