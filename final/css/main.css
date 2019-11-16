@@ -27,6 +27,7 @@
 
 .hidden {
   visibility: hidden !important;
+  display: none;
 }
 
 html {
@@ -59,6 +60,25 @@ main {
 
 header {
   height: 80px; 
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+/* header p {
+  position: absolute;
+} */
+
+header p {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 62px;
+	font-size: 1.1rem;
+	margin: 0;
+	color: #fff;
 }
 
 #like-dislike-section {
@@ -92,19 +112,23 @@ header {
   letter-spacing: 1px;
   text-shadow: 0 .1875rem .375rem rgba(0,0,0,0.16);
 }
+
 input[type="radio"].toggle {
   display: none;
 }
+
 input[type="radio"].toggle + label {
   cursor: pointer;
   min-width: 50%;
   font-size: 1.5rem;
   padding: .55rem 0;
 }
+
 input[type="radio"].toggle + label:hover {
   background: none;
   color: #1cb4df;
 }
+
 input[type="radio"].toggle + label:after {
   background: #fff;
   content: "";
@@ -116,33 +140,39 @@ input[type="radio"].toggle + label:after {
   z-index: -1;
   border-radius: 1.5rem;
 }
+
 input[type="radio"].toggle.toggle-left + label {
   border-right: 0;
 }
+
 input[type="radio"].toggle.toggle-left + label:after {
   left: 100%;
 }
+
 input[type="radio"].toggle.toggle-right + label {
   margin-left: -5px;
 }
+
 input[type="radio"].toggle.toggle-right + label:after {
   left: -100%;
 }
+
 input[type="radio"].toggle:checked + label {
   cursor: default;
   transition: color 200ms;
 }
+
 input[type="radio"].toggle:checked + label:after {
   left: 0;
 }
 
-#cuisine {
+#cuisine-like, #cuisine-dislike {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#cuisine-select {
+.cuisine-select {
   display: grid;
   grid-template-columns: repeat(2, 7rem);
   grid-template-rows: repeat(3, 7rem);

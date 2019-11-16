@@ -41,6 +41,7 @@
   <main>
     <header>
       <img class="logo" src="images/bite-logo.png" alt="BITE">
+      <p>Finding food for the indecisive</p>
     </header>
 
     <div id="selection-div">
@@ -53,47 +54,46 @@
         <label for="toggle-off" class="btn">Dislikes</label>
       </section>
 
-      <section id="cuisine-section">
-
-        <form action="" id="cuisine">
-          <div id="cuisine-select">
+      <section id="likes" class="cuisine-section">
+        <form action="" id="cuisine-like">
+          <div id="select-like" class="cuisine-select">
             <label>
-              <input type="checkbox" name="cuisine" id="american">
+              <input type="checkbox" name="cuisine" id="american-like">
               <span class="cuisine-icon">
                 <img class="food-img" src="images/cuisine-american.png" alt="american food">
                 <p class="food-label">american</p>
               </span>
             </label>
             <label>
-              <input type="checkbox" name="cuisine" id="chinese">
+              <input type="checkbox" name="cuisine" id="chinese-like">
               <span class="cuisine-icon">
                 <img class="food-img" src="images/cuisine-chinese.png" alt="chinese food">
                 <p class="food-label">chinese</p>
               </span>
             </label>
             <label>
-              <input type="checkbox" name="cuisine" id="italian">
+              <input type="checkbox" name="cuisine" id="italian-like">
               <span class="cuisine-icon">
                 <img class="food-img" src="images/cuisine-italian.png" alt="italian food">
                 <p class="food-label">italian</p>
               </span>
             </label>
             <label>
-              <input type="checkbox" name="cuisine" id="indian">
+              <input type="checkbox" name="cuisine" id="indian-like">
               <span class="cuisine-icon">
                 <img class="food-img" src="images/cuisine-indian.png" alt="indian food">
                 <p class="food-label">indian</p>
               </span>
             </label>
             <label>
-              <input type="checkbox" name="cuisine" id="hispanic">
+              <input type="checkbox" name="cuisine" id="hispanic-like">
               <span class="cuisine-icon">
                 <img class="food-img" src="images/cuisine-hispanic.png" alt="hispanic food">
                 <p class="food-label">hispanic</p>
               </span>
             </label>
             <label>
-              <input type="checkbox" name="cuisine" id="japanese">
+              <input type="checkbox" name="cuisine" id="japanese-like">
               <span class="cuisine-icon">
                 <img class="food-img" src="images/cuisine-japanese.png" alt="japanese food">
                 <p class="food-label">japanese</p>
@@ -101,11 +101,65 @@
             </label>
           </div>
           <div>
-            <input id="submit-btn" type="submit" value="Pick For Me">
+            <input id="submit-btn-likes" type="submit" value="Pick For Me">
           </div>
 
         </form>
       </section>
+
+      <section id="dislikes" class="cuisine-section, hidden">
+        <form action="" id="cuisine-dislike">
+          <div id="select-dislike" class="cuisine-select">
+            <label>
+              <input type="checkbox" name="cuisine" id="american-dislike">
+              <span class="cuisine-icon">
+                <img class="food-img" src="images/cuisine-american.png" alt="american food">
+                <p class="food-label">american</p>
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" name="cuisine" id="chinese-dislike">
+              <span class="cuisine-icon">
+                <img class="food-img" src="images/cuisine-chinese.png" alt="chinese food">
+                <p class="food-label">chinese</p>
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" name="cuisine" id="italian-dislike">
+              <span class="cuisine-icon">
+                <img class="food-img" src="images/cuisine-italian.png" alt="italian food">
+                <p class="food-label">italian</p>
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" name="cuisine" id="indian-dislike">
+              <span class="cuisine-icon">
+                <img class="food-img" src="images/cuisine-indian.png" alt="indian food">
+                <p class="food-label">indian</p>
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" name="cuisine" id="hispanic-dislike">
+              <span class="cuisine-icon">
+                <img class="food-img" src="images/cuisine-hispanic.png" alt="hispanic food">
+                <p class="food-label">hispanic</p>
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" name="cuisine" id="japanese-dislike">
+              <span class="cuisine-icon">
+                <img class="food-img" src="images/cuisine-japanese.png" alt="japanese food">
+                <p class="food-label">japanese</p>
+              </span>
+            </label>
+          </div>
+          <div>
+            <input id="submit-btn-dislikes" type="submit" value="Pick For Me">
+          </div>
+
+        </form>
+      </section>
+
     </div>
 
     <div id="shuffling-animation-div" class="hidden">
