@@ -67,15 +67,11 @@ header {
   align-content: center;
 }
 
-/* header p {
-  position: absolute;
-} */
-
 header p {
 	position: absolute;
 	text-align: center;
 	width: 100%;
-	top: 62px;
+	top: 66px;
 	font-size: 1.1rem;
 	margin: 0;
 	color: #fff;
@@ -166,13 +162,13 @@ input[type="radio"].toggle:checked + label:after {
   left: 0;
 }
 
-#cuisine-like, #cuisine-dislike {
+#cuisine {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.cuisine-select {
+#cuisine-select {
   display: grid;
   grid-template-columns: repeat(2, 7rem);
   grid-template-rows: repeat(3, 7rem);
