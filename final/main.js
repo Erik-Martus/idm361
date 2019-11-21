@@ -1,45 +1,71 @@
 // * handle form switch *
-var like_btn = document.getElementById("toggle-on");
-var dislike_btn = document.getElementById("toggle-off");
+// Toggle switch options at the top of the page
+var likeBtn = document.getElementById("toggle-on");
+var dislikeBtn = document.getElementById("toggle-off");
 
-var like_sct = document.getElementById("likes");
-var dislike_sct = document.getElementById("dislikes");
+// like_btn.addEventListener("click", function () {
+//   console.log("Clicked likes");
+// }, false);
 
-like_btn.addEventListener("click", function () {
-  console.log("Clicked likes");
-}, false);
-
-dislike_btn.addEventListener("click", function () {
-  console.log("Clicked dislikes");
-}, false);
+// dislike_btn.addEventListener("click", function () {
+//   console.log("Clicked dislikes");
+// }, false);
 
 // * handle screen state switching *
-var submit_btn = document.getElementById("submit-btn-likes");
-console.log(submit_btn);
-var selection_div = document.getElementById("selection-div");
-var shuffle_div = document.getElementById("shuffling-animation-div");
-var result_div = document.getElementById("result-div");
+var submitBtn = document.getElementById("submit-btn");
+console.log(submitBtn);
+var selectionDiv = document.getElementById("selection-div");
+var shuffleDiv = document.getElementById("shuffling-animation-div");
+var resultDiv = document.getElementById("result-div");
 
-var btn_pickAgain = document.getElementById("pick-again");
+var pickAgainBtn = document.getElementById("pick-again");
 
 function playShuffle() {
-  selection_div.classList.add("hidden");
-  shuffle_div.classList.remove("hidden");
+  selectionDiv.classList.add("hidden");
+  shuffleDiv.classList.remove("hidden");
 
   setTimeout(function () {
-    shuffle_div.classList.add("hidden");
-    result_div.classList.remove("hidden");
+    shuffleDiv.classList.add("hidden");
+    resultDiv.classList.remove("hidden");
   }, 2000);
 };
 
-submit_btn.addEventListener("click", function (event) {
+function pickCuisine() {
+  var selectedCuisine = new Array(); // Create arry
+
+  var cuisineDiv = document.getElementById("cuisine-section");
+  console.log(cuisineDiv);
+
+  var cuisineChecks = cuisineDiv.querySelectorAll("[type=checkbox]");
+  console.log(cuisineChecks);
+
+  for (var i = 0; i < cuisineChecks.length; i++) {
+    console.log(i + " " + cuisineChecks[i].id);
+    if (cuisineChecks[i].checked) {
+      selectedCuisine.push(cuisineChecks[i].id);
+    }
+    // console.log(cuisineChecks.name);
+  }
+  console.log(selectedCuisine);
+  var pickedCuisine = selectedCuisine[Math.floor(Math.random() * selectedCuisine.length)];
+  console.log(pickedCuisine);
+  alert(pickedCuisine);
+}
+
+submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
   console.log("Prevented");
-  playShuffle();
+  if (likeBtn.checked == true) {
+    console.log("Use likes");
+  } else if (dislikeBtn.checked == true) {
+    console.log("Use dislikes");
+  }
+  pickCuisine();
+  // playShuffle();
 });
 
-btn_pickAgain.addEventListener("click", function () {
-  result_div.classList.add("hidden");
-  selection_div.classList.remove("hidden");
+pickAgainBtn.addEventListener("click", function () {
+  resultDiv.classList.add("hidden");
+  selectionDiv.classList.remove("hidden");
 });
 
