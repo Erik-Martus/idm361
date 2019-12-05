@@ -53,13 +53,13 @@ main {
 }
 
 .logo {
-  margin: 1rem auto;
+  margin: 1rem auto 0;
   left: 5rem;
   z-index: 50;
 }
 
 header {
-  height: 80px; 
+  /*! height: 80px; */ 
   position: relative;
   width: 100%;
   display: flex;
@@ -68,24 +68,37 @@ header {
 }
 
 header p {
-	position: absolute;
+	/*! position: absolute; */
 	text-align: center;
 	width: 100%;
 	top: 66px;
 	font-size: 1.1rem;
-	margin: 0;
+	margin: .25rem 0;
 	color: #fff;
 }
 
-#like-dislike-section {
+#instructions {
+  color: #ffffff;
+  text-align: center;
+}
+
+#instructions > h2 {
+  margin: 0 auto .125rem;
+}
+
+#instructions > h3 {
+  margin: 0;
+}
+
+/* #like-dislike-section {
   border-radius: 1.5rem;
   position: relative;
   height: 3rem;
   width: 17rem;
   overflow: hidden;
   margin: .75rem 0;
-}
-
+} */
+/* 
 
 #slide-bg {
   height: 100%;
@@ -96,7 +109,7 @@ header p {
   position: absolute;
   z-index: -10;
   opacity: .6;
-}
+} */
 
 .btn {
   display: inline-block;
@@ -109,7 +122,7 @@ header p {
   text-shadow: 0 .1875rem .375rem rgba(0,0,0,0.16);
 }
 
-input[type="radio"].toggle {
+/* input[type="radio"].toggle {
   display: none;
 }
 
@@ -160,7 +173,7 @@ input[type="radio"].toggle:checked + label {
 
 input[type="radio"].toggle:checked + label:after {
   left: 0;
-}
+} */
 
 #cuisine {
   display: flex;

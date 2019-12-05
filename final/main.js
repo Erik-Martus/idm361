@@ -1,7 +1,7 @@
 // * handle form switch *
 // Toggle switch options at the top of the page
-var likeBtn = document.getElementById("toggle-on");
-var dislikeBtn = document.getElementById("toggle-off");
+// var likeBtn = document.getElementById("toggle-on");
+// var dislikeBtn = document.getElementById("toggle-off");
 
 // like_btn.addEventListener("click", function () {
 //   console.log("Clicked likes");
@@ -13,10 +13,11 @@ var dislikeBtn = document.getElementById("toggle-off");
 
 // * handle screen state switching *
 var submitBtn = document.getElementById("submit-btn");
-console.log(submitBtn);
 var selectionDiv = document.getElementById("selection-div");
 var shuffleDiv = document.getElementById("shuffling-animation-div");
+
 var resultDiv = document.getElementById("result-div");
+var
 
 var pickAgainBtn = document.getElementById("pick-again");
 
@@ -34,34 +35,31 @@ function pickCuisine() {
   var selectedCuisine = new Array(); // Create arry
 
   var cuisineDiv = document.getElementById("cuisine-section");
-  console.log(cuisineDiv);
 
   var cuisineChecks = cuisineDiv.querySelectorAll("[type=checkbox]");
-  console.log(cuisineChecks);
 
   for (var i = 0; i < cuisineChecks.length; i++) {
-    console.log(i + " " + cuisineChecks[i].id);
     if (cuisineChecks[i].checked) {
       selectedCuisine.push(cuisineChecks[i].id);
     }
     // console.log(cuisineChecks.name);
   }
-  console.log(selectedCuisine);
   var pickedCuisine = selectedCuisine[Math.floor(Math.random() * selectedCuisine.length)];
   console.log(pickedCuisine);
   alert(pickedCuisine);
+
 }
 
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
   console.log("Prevented");
-  if (likeBtn.checked == true) {
-    console.log("Use likes");
-  } else if (dislikeBtn.checked == true) {
-    console.log("Use dislikes");
-  }
+  // if (likeBtn.checked == true) {
+  //   console.log("Use likes");
+  // } else if (dislikeBtn.checked == true) {
+  //   console.log("Use dislikes");
+  // }
   pickCuisine();
-  // playShuffle();
+  playShuffle();
 });
 
 pickAgainBtn.addEventListener("click", function () {
