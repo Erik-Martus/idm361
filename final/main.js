@@ -17,7 +17,9 @@ var selectionDiv = document.getElementById("selection-div");
 var shuffleDiv = document.getElementById("shuffling-animation-div");
 
 var resultDiv = document.getElementById("result-div");
-var
+var resultImg = document.getElementById("result-img");
+var resultLab = document.getElementById("result-label");
+
 
 var pickAgainBtn = document.getElementById("pick-again");
 
@@ -45,14 +47,15 @@ function pickCuisine() {
     // console.log(cuisineChecks.name);
   }
   var pickedCuisine = selectedCuisine[Math.floor(Math.random() * selectedCuisine.length)];
-  console.log(pickedCuisine);
-  alert(pickedCuisine);
-
+  resultImg.src = "images/cuisine-" + pickedCuisine.toLowerCase() + "@2x.png";
+  var capPickedCuisine = pickedCuisine[0].toUpperCase() +
+    pickedCuisine.slice(1);
+  resultImg.alt = capPickedCuisine + " Food";
+  resultLab.innerHTML = pickedCuisine;
 }
 
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  console.log("Prevented");
   // if (likeBtn.checked == true) {
   //   console.log("Use likes");
   // } else if (dislikeBtn.checked == true) {

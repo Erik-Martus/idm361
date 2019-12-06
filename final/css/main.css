@@ -428,7 +428,7 @@ input[type="radio"].toggle:checked + label:after {
   position: relative;
 }
 
-.result-label {
+#result-label {
   position: absolute;
   bottom: -1.65rem;
   text-align: center;
