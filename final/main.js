@@ -22,12 +22,6 @@ function playShuffle() {
 
 // Randomly picks cuisine and sets result page info
 function pickCuisine() {
-  console.log(pickedCuisine);
-  if (pickedCuisine !== null) {
-    pickedCuisine = undefined;
-    delete (pickedCuisine);
-    console.log(pickedCuisine);
-  }
   var selectedCuisine = new Array(); // Create arry
 
   var cuisineDiv = document.getElementById("cuisine-section");
@@ -40,6 +34,11 @@ function pickCuisine() {
     }
     // console.log(cuisineChecks.name);
   }
+  console.log(selectedCuisine.length);
+  if (selectedCuisine.length < 2) {
+
+  }
+
   var pickedCuisine = selectedCuisine[Math.floor(Math.random() * selectedCuisine.length)];
   resultImg.src = "images/cuisine-" + pickedCuisine.toLowerCase() + "@2x.png";
   var capPickedCuisine = pickedCuisine[0].toUpperCase() +
@@ -47,26 +46,21 @@ function pickCuisine() {
   resultImg.alt = capPickedCuisine + " Food";
   resultLab.innerHTML = pickedCuisine;
 
-  console.log(pickedCuisine);
-
-  console.log(nearbyBtn);
   nearbyBtn.addEventListener("click", function () {
     var search = capPickedCuisine + "+restaurants+near+me"
-    console.log(search);
     var searchLink = "http://www.google.com/search?q=" + search;
-    console.log(searchLink);
-    // window.location = searchLink
     window.open(
       searchLink,
       '_blank'
     );
   });
+
+  // playShuffle();
 }
 
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
   pickCuisine();
-  playShuffle();
 });
 
 pickAgainBtn.addEventListener("click", function () {
