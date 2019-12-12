@@ -5,9 +5,9 @@ var shuffleDiv = document.getElementById("shuffling-animation-div");
 var resultDiv = document.getElementById("result-div");
 var resultImg = document.getElementById("result-img");
 var resultLab = document.getElementById("result-label");
-
-
+var nearbyBtn = document.getElementById("nearby");
 var pickAgainBtn = document.getElementById("pick-again");
+
 
 // Loads and plays shuffling animation
 function playShuffle() {
@@ -22,6 +22,12 @@ function playShuffle() {
 
 // Randomly picks cuisine and sets result page info
 function pickCuisine() {
+  console.log(pickedCuisine);
+  if (pickedCuisine !== null) {
+    pickedCuisine = undefined;
+    delete (pickedCuisine);
+    console.log(pickedCuisine);
+  }
   var selectedCuisine = new Array(); // Create arry
 
   var cuisineDiv = document.getElementById("cuisine-section");
@@ -40,6 +46,21 @@ function pickCuisine() {
     pickedCuisine.slice(1);
   resultImg.alt = capPickedCuisine + " Food";
   resultLab.innerHTML = pickedCuisine;
+
+  console.log(pickedCuisine);
+
+  console.log(nearbyBtn);
+  nearbyBtn.addEventListener("click", function () {
+    var search = capPickedCuisine + "+restaurants+near+me"
+    console.log(search);
+    var searchLink = "http://www.google.com/search?q=" + search;
+    console.log(searchLink);
+    // window.location = searchLink
+    window.open(
+      searchLink,
+      '_blank'
+    );
+  });
 }
 
 submitBtn.addEventListener("click", function (event) {
