@@ -1,17 +1,3 @@
-// * handle form switch *
-// Toggle switch options at the top of the page
-// var likeBtn = document.getElementById("toggle-on");
-// var dislikeBtn = document.getElementById("toggle-off");
-
-// like_btn.addEventListener("click", function () {
-//   console.log("Clicked likes");
-// }, false);
-
-// dislike_btn.addEventListener("click", function () {
-//   console.log("Clicked dislikes");
-// }, false);
-
-// * handle screen state switching *
 var submitBtn = document.getElementById("submit-btn");
 var selectionDiv = document.getElementById("selection-div");
 var shuffleDiv = document.getElementById("shuffling-animation-div");
@@ -23,6 +9,7 @@ var resultLab = document.getElementById("result-label");
 
 var pickAgainBtn = document.getElementById("pick-again");
 
+// Loads and plays shuffling animation
 function playShuffle() {
   selectionDiv.classList.add("hidden");
   shuffleDiv.classList.remove("hidden");
@@ -33,6 +20,7 @@ function playShuffle() {
   }, 2000);
 };
 
+// Randomly picks cuisine and sets result page info
 function pickCuisine() {
   var selectedCuisine = new Array(); // Create arry
 
@@ -56,11 +44,6 @@ function pickCuisine() {
 
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  // if (likeBtn.checked == true) {
-  //   console.log("Use likes");
-  // } else if (dislikeBtn.checked == true) {
-  //   console.log("Use dislikes");
-  // }
   pickCuisine();
   playShuffle();
 });
