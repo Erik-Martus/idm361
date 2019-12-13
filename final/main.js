@@ -8,6 +8,8 @@ var resultLab = document.getElementById("result-label");
 var nearbyBtn = document.getElementById("nearby");
 var pickAgainBtn = document.getElementById("pick-again");
 
+var alertOverlay = document.getElementById("alert");
+var closeBtn = document.getElementById("alert-close");
 
 // Loads and plays shuffling animation
 function playShuffle() {
@@ -34,28 +36,29 @@ function pickCuisine() {
     }
     // console.log(cuisineChecks.name);
   }
-  console.log(selectedCuisine.length);
-  if (selectedCuisine.length < 2) {
 
+  if (selectedCuisine.length < 2) {
+    // Show error message
+    alertOverlay.classList.remove("hidden");
+  } else {
+    var pickedCuisine = selectedCuisine[Math.floor(Math.random() * selectedCuisine.length)];
+    resultImg.src = "images/cuisine-" + pickedCuisine.toLowerCase() + "@2x.png";
+    var capPickedCuisine = pickedCuisine[0].toUpperCase() +
+      pickedCuisine.slice(1);
+    resultImg.alt = capPickedCuisine + " Food";
+    resultLab.innerHTML = pickedCuisine;
+
+    nearbyBtn.addEventListener("click", function () {
+      var search = capPickedCuisine + "+restaurants+near+me"
+      var searchLink = "http://www.google.com/search?q=" + search;
+      window.open(
+        searchLink,
+        '_blank'
+      );
+    });
+    playShuffle();
   }
 
-  var pickedCuisine = selectedCuisine[Math.floor(Math.random() * selectedCuisine.length)];
-  resultImg.src = "images/cuisine-" + pickedCuisine.toLowerCase() + "@2x.png";
-  var capPickedCuisine = pickedCuisine[0].toUpperCase() +
-    pickedCuisine.slice(1);
-  resultImg.alt = capPickedCuisine + " Food";
-  resultLab.innerHTML = pickedCuisine;
-
-  nearbyBtn.addEventListener("click", function () {
-    var search = capPickedCuisine + "+restaurants+near+me"
-    var searchLink = "http://www.google.com/search?q=" + search;
-    window.open(
-      searchLink,
-      '_blank'
-    );
-  });
-
-  // playShuffle();
 }
 
 submitBtn.addEventListener("click", function (event) {
@@ -68,3 +71,8 @@ pickAgainBtn.addEventListener("click", function () {
   selectionDiv.classList.remove("hidden");
 });
 
+closeBtn.addEventListener("click", function () {
+  if (alertOverlay.classList.contains("hidden") !== true) {
+    alertOverlay.classList.add("hidden");
+  }
+})
